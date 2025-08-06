@@ -63,7 +63,9 @@ const SellerDashboard = () => {
                             <TableRow>
                                 <TableCell>Order ID</TableCell>
                                 <TableCell>Status</TableCell>
-                                <TableCell align="right"># of Items</TableCell>
+                                <TableCell align="right">Product Name</TableCell>
+                                <TableCell align="right">Price</TableCell>
+                                <TableCell align="right">Quantity</TableCell>
                                 <TableCell align="right">Total Price</TableCell>
                                 <TableCell align="center">Actions</TableCell>
                             </TableRow>
@@ -73,7 +75,9 @@ const SellerDashboard = () => {
                                 <TableRow key={order.id}>
                                     <TableCell>#{order.id}</TableCell>
                                     <TableCell>{order.status}</TableCell>
-                                    <TableCell align="right">{order.items.length}</TableCell>
+                                    <TableCell align="right">{order.items[0].product_item.product.name}</TableCell>
+                                    <TableCell align="right">{order.items[0].product_item.price}</TableCell>
+                                    <TableCell align="right">{order.items[0].quantity}</TableCell>
                                     <TableCell align="right">${order.total_price.toFixed(2)}</TableCell>
                                     <TableCell align="center">
                                         <Button size="small" disabled>Manage</Button>
