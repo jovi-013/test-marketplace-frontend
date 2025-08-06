@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import SellerDashboard from './pages/SellerDashboard';
+import BuyerHistoryPage from './pages/BuyerHistoryPage';
 
 function App() {
   return (
@@ -26,6 +27,11 @@ function App() {
         <Route 
           path="dashboard"
           element={<ProtectedRoute><SellerDashboard /></ProtectedRoute>}
+        />
+
+        <Route 
+          path="my-orders"
+          element={<ProtectedRoute><BuyerHistoryPage /></ProtectedRoute>}
         />
       </Route>
     </Routes>

@@ -15,6 +15,16 @@ const Layout = () => {
           </Typography>
           {user ? (
             <>
+              {user.user_type === 'buyer' && (
+                <Button 
+                  component={RouterLink} 
+                  to="/my-orders" 
+                  color="inherit"
+                  sx={{ mr: 2 }}
+                >
+                  My Orders
+                </Button>
+              )}
               <Typography sx={{ mr: 2 }}>Welcome, {user.email}</Typography>
               <Button color="inherit" onClick={logout}>Logout</Button>
             </>
