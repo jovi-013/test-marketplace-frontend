@@ -47,8 +47,17 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const register = async (email, password, userType) => {
+    const userData = {
+      email: email,
+      password: password,
+      user_type: userType,
+    };
+    await apiClient.post('/users/', userData);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout }}>
+    <AuthContext.Provider value={{ user, token, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );
