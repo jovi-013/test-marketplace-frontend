@@ -70,16 +70,16 @@ const HomePage = () => {
                                 <Typography variant="h5" component="div">{product.name}</Typography>
                                 <Typography sx={{ mb: 1.5 }} color="text.secondary">{product.description}</Typography>
                                 <Divider sx={{ my: 2 }} />
-                                <Typography variant="h6">Sellers:</Typography>
                                 {product.sellers.length > 0 ? (
-                                    <List>
+                                    <List sx={{ padding: 0 }}>
                                         {product.sellers.map((sellerProduct) => (
-                                            <ListItem key={sellerProduct.id} disableGutters>
+                                            <ListItem key={sellerProduct.id} disableGutters sx={{ display: 'flex', flexDirection: 'column', padding: 0 }}>
                                                 <ListItemText 
-                                                    primary={`Price: $${sellerProduct.price}`} 
-                                                    secondary={`Quantity: ${sellerProduct.quantity}`} 
+                                                    primary={`Seller: ${sellerProduct.seller.email}`}
+                                                    secondary={`Price: $${sellerProduct.price.toFixed(2)} | Quantity: ${sellerProduct.quantity}`} 
                                                 />
                                                 <Button 
+                                                    sx={{ mt: 1 }}
                                                     variant="contained" 
                                                     size="small" 
                                                     onClick={() => handleBuyClick(sellerProduct)}
